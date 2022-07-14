@@ -17,10 +17,10 @@ console.log(divBoxes);
 
 buttonCreate.addEventListener('click', createBoxes);
 
-function createBoxes(event) {
-const boxesValue = Number(inputEL.value);
+function createBoxes(amount) {
+amount = Number(inputEL.value);
 const divs = [];
-for(let i = 0; i < boxesValue; i += 1) {
+for(let i = 0; i < amount; i += 1) {
  const div = document.createElement('div');
  div.style.width = div.style.height = `${30 + i * 10}px `;
  div.style.backgroundColor = getRandomHexColor();
@@ -28,7 +28,6 @@ for(let i = 0; i < boxesValue; i += 1) {
 }
 divBoxes.append(...divs);
 };
-
 
 buttonDestroy.addEventListener('click', deleteBoxes);
 
