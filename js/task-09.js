@@ -11,6 +11,8 @@ console.log(button);
 button.addEventListener("click", changeBodyColor);
 
 function changeBodyColor(color) {
-  document.body.style.background = getRandomHexColor();
-  return colorSpan.textContent = getRandomHexColor();
+  const randomColor = getRandomHexColor()
+  document.body.style.background = randomColor;
+  colorSpan.textContent = randomColor;
 }
+

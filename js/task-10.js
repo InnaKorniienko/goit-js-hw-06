@@ -14,3 +14,22 @@ console.log(buttonDestroy);
 const divBoxes = document.querySelector("#boxes");
 console.log(divBoxes);
 
+
+buttonCreate.addEventListener("submit", createBoxes);
+
+function createBoxes(event) {
+event.preventDefault();
+const boxesValue = inputEL.value;
+const divs = [];
+for(let i = 0; i < boxesValue; i += 1) {
+ const div = document.createElement('div');
+ div.style.width = div.style.height = `${30 + i * 10}px `;
+ div.style.backgroundColor = getRandomHexColor;
+}
+divBoxes.append(...divs);
+};
+
+buttonDestroy.removeEventListener("click", createBoxes);
+
+
+
