@@ -15,21 +15,27 @@ const divBoxes = document.querySelector("#boxes");
 console.log(divBoxes);
 
 
-buttonCreate.addEventListener("submit", createBoxes);
+buttonCreate.addEventListener('click', createBoxes);
 
 function createBoxes(event) {
-event.preventDefault();
-const boxesValue = inputEL.value;
+const boxesValue = Number(inputEL.value);
 const divs = [];
 for(let i = 0; i < boxesValue; i += 1) {
  const div = document.createElement('div');
  div.style.width = div.style.height = `${30 + i * 10}px `;
- div.style.backgroundColor = getRandomHexColor;
+ div.style.backgroundColor = getRandomHexColor();
+ divs.push(div);
 }
 divBoxes.append(...divs);
 };
 
-buttonDestroy.removeEventListener("click", createBoxes);
+
+buttonDestroy.addEventListener('click', deleteBoxes);
+
+function deleteBoxes(event) {
+  divBoxes.innerHTML = "";
+}
+
 
 
 
