@@ -15,10 +15,9 @@ const divBoxes = document.querySelector("#boxes");
 console.log(divBoxes);
 
 
-buttonCreate.addEventListener('click', createBoxes);
+buttonCreate.addEventListener('click', e => createBoxes(Number(inputEL.value)));
 
 function createBoxes(amount) {
-amount = Number(inputEL.value);
 const divs = [];
 for(let i = 0; i < amount; i += 1) {
  const div = document.createElement('div');
